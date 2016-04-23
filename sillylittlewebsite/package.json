@@ -8,7 +8,7 @@
     "start:dev": "node index.js 4000",
     "test": "node node_modules/.bin/mocha test -u bdd -R spec",
     "pretest": "npm run compile && npm run lint",
-    "lint": "jshint *.js **/*.js   --exclude ./lib/*.js",
+    "lint": "jshint *.js **/*.js",
     "compile:coffee": "coffee --compile --output ./lib ./src/coffeescripts",
     "compile:ts": "tsc --outDir ./lib --module commonjs ./src/typescripts/tsCode.ts",
     "compile": "npm run compile:coffee && npm run compile:ts",
@@ -19,13 +19,19 @@
     "build:clean": "rimraf public/css/* public/js/*",
     "prebuild": "npm run build:clean",
     "build": "npm run build:less && npm run build:bundle",
-    "stop": "echo 'Running STOP script'", "restart": "echo 'RESTARTed'"
+    "watch:test": "npm run test -- -u bdd -R min --watch",
+    "watch:lint": "watch 'npm run lint' .",
+    "watch:server": "nodemon --ignore client --ignore public index.js",
+    "watch:bundle": "watchify ./client/js/app.js -o ./public/js/bundle.js -dv",
+    "watch:bundleWatcher": "watch 'npm run build:bundle' client",
+    "watch:browser": "live-reload public --port 9091",
+    "watch": "npm run watch:test & npm run watch:bundle & npm run watch:server & npm run watch:browser",
+    "stop": "echo 'Running STOP script'",
+    "restart": "echo 'RESTARTed' # seemingly useless comment",
+    "comment?": "echo 'this is just a comment'"
   },
-  "jshintConfig": {
-    "esnext": "true",
-    "noyield": "true",
-    "asi": "true",
-    "node": "true"
+  "scriptComments": {
+    "blah": "blah"
   },
   "author": "me",
   "license": "ISC",
@@ -34,12 +40,16 @@
     "coffee-script": "^1.10.0",
     "jshint": "^2.9.1",
     "less": "^2.6.1",
+    "live-reload": "^1.1.0",
     "mocha": "^2.4.5",
+    "nodemon": "^1.9.1",
     "rimraf": "^2.5.2",
     "should": "^8.3.1",
     "supertest": "^1.2.0",
     "typescript": "^1.8.10",
-    "uglify-js": "^2.6.2"
+    "uglify-js": "^2.6.2",
+    "watch": "^0.17.1",
+    "watchify": "^3.7.0"
   },
   "dependencies": {
     "koa": "^1.2.0"

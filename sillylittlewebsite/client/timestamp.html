@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Timestamp Test Page</title>
+    <script src="//localhost:9091"></script> 
+  </head>
+  <body>
+    <p>Page rendered at: <br><span id="timestamp"></span></p>
+  </body>
+  <script>
+    document.getElementById('timestamp').innerHTML = new Date();
+  </script>
+</html>
