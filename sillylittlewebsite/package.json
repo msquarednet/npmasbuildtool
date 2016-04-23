@@ -1,6 +1,6 @@
 {
   "name": "sillylittlewebsite",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "blah",
   "main": "index.js",
   "scripts": {
@@ -59,6 +59,6 @@
   },
   "repository": {
     "type": "git",
-    "url": ".."
+    "url": "../"
   }
 }
