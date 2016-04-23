@@ -21,7 +21,7 @@ app.use(function *(){
   if (this.request.path === '/client') {
     this.body = html; return;
   }
-  this.body = 'Koa says Hi';
+  this.body = 'Koa says Hi!';
 })
 
 // var port = process.env.PORT || process.argv[2] || 3000;

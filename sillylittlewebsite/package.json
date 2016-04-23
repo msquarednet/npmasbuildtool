@@ -1,6 +1,6 @@
 {
   "name": "sillylittlewebsite",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "blah",
   "main": "index.js",
   "scripts": {
@@ -38,11 +38,13 @@
     "push:azure": "git push azure master",
     "launch:prod:unix": "open https://sillylittlewebsite.herokuapp.com",
     "launch:prod:win": "start https://sillylittlewebsite.herokuapp.com",
-    "launch:prod": "heroku open"
+    "launch:prod": "heroku open",
+    "deploy:prod": "npm run test:deploy -s && npm run build -s && npm run version:patch",
+    "test:deploy": "npm test -- -R dot"
   },
   "engines": {
     "node": "~4.2.2",
-    "npm" : "~3.3.9"
+    "npm": "~3.3.9"
   },
   "scriptComments": {
     "blah": "blah"
