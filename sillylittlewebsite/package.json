@@ -1,6 +1,6 @@
 {
   "name": "sillylittlewebsite",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "blah",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,10 @@
     "watch": "npm run watch:test & npm run watch:bundle & npm run watch:server & npm run watch:browser",
     "stop": "echo 'Running STOP script'",
     "restart": "echo 'RESTARTed' # seemingly useless comment",
-    "comment?": "echo 'this is just a comment'"
+    "comment?": "echo 'this is just a comment'",
+    "version:major": "npm version major",
+    "version:minor": "npm version minor",
+    "version:patch": "npm version patch",
   },
   "scriptComments": {
     "blah": "blah"
@@ -56,6 +59,6 @@
   },
   "repository": {
     "type": "git",
-    "url" : "."
+    "url": "."
   }
 }
