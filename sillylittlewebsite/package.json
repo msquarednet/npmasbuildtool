@@ -31,7 +31,8 @@
     "comment?": "echo 'this is just a comment'",
     "version:major": "npm version major",
     "version:minor": "npm version minor",
-    "version:patch": "npm version patch"
+    "version:patch": "npm version patch",
+    "push:origin": "git push --tags origin HEAD:master"
   },
   "scriptComments": {
     "blah": "blah"
